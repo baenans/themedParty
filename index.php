@@ -7,10 +7,10 @@
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body id="main">
+	<div id="pulp-intro"></div>
 	<form id="login" action="./login">
 		<input type="text" name="user" placeholder="user"><br>
 		<input type="password" name="password" placeholder="password">
 	</form>
-	<div id="pulp-intro"></div>
 </body>
 </html>
