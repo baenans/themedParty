@@ -59,14 +59,17 @@ body#main{
 	width:600px;
 	height:386px;
 	background-image: url('../img/vincentAndJules.jpg');
+	z-index:-10;
 }
 form#login{
+	position: absolute;
 	float: left;
 	margin-top: 290px;
 	margin-left: 170px;
 	width: 340px;
 	height: 90px;
 	line-height: 48px;
+	z-index:10;
 }
 form#login input[type="text"],input[type="password"] {
 	text-transform:lowercase;
