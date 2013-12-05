@@ -1,4 +1,11 @@
+# Mac
 .DS_Store
+# Django
 *.pyc
 *.pyo
 *.sqlite3
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Yes, I am that hipster
