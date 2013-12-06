@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Escoge un Personaje</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+	<style type="text/css">
+	body{
+		color: white;
+		background-color: black;
+	}
+	a, a:visited, a:hover, a:active{
+		color: white;
+	}
+	.inner-item {
+		height: 560px;
+    	text-align: center;
+   	}
+   	.inner-item img {
+    	margin: 0 auto;
+   	}
+
+   	#carousel{
+   		position:absolute; 
+		width: 100%;
+		top:50%;  
+		margin-top:-280px; 
+   	}
+    </style>
+</head>
+<body>	
+<div class="text-center" style="margin-top:20px; margin-bottom:60px; padding-right:34px;"><b>{{ user.username }}</b> | <a href="../logout">[Desconectar]</a></div>
+{% if chars %}
+
+<form action="./" method="post">
+{% csrf_token %}
+<div id="carousel" class="carousel slide" data-ride="carousel">
+	<div class="carousel-inner">
+		{% for character in chars %}
+			<div class="item{%if forloop.first%} active{%endif%}">
+			<div class='inner-item'>
+				<img src="{{ character.picture}}" style="max-height: 560px;">
+     		</div>
+		      <div class="carousel-caption">
+		        <h1>{{ character.name }}</h1>
+		        <p>{{ character.description}}</p>
+		        <p><button name="schar" type="submit" class="btn btn-success" value="{{ character.id }}">Escoger {{ character.name }}</button></p>
+		      </div>
+		    </div>
+		{% endfor %}
+	</div>
+</div>
+</form>
+
+  <a class="left carousel-control" href="#carousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+{% endif %}
+
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+		$('.carousel').carousel()
+</script>
+</body>
+</html>

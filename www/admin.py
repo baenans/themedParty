@@ -1,5 +1,5 @@
 from django.contrib import admin
-from www.models import Character, Profile
+from www.models import Characters, Profiles
 
-admin.site.register(Character)
-admin.site.register(Profile)
+admin.site.register(Characters)
+admin.site.register(Profiles)

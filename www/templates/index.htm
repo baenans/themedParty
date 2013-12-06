@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tu Personaje</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+	<style type="text/css">
+	body{
+		color: white;
+		background-color: black;
+	}
+	a, a:visited, a:hover, a:active{
+		color: white;
+	}
+	</style>
+</head>
+<body>
+<div class="text-center" style="margin-top:20px; margin-bottom:60px; padding-right:34px;"><b>{{ user.username }}</b> | <a href="../logout">[Desconectar]</a></div>
+<div class="text-center">
+	<p><h1>Eres {{ char.name }}</h1></p>
+	<p><img src="{{ char.picture }}" style="height: 350px"></p>
+	<p>{{ char.description }}</p>
+	<form method="POST" action="./">
+	{% csrf_token %}
+
+	{{ BASE_DIR }}
+	<button type="submit" class="btn btn-danger">No quiero ser {{ char.name }}</button>
+	</form>
+</div>
+	
+</body>
+</html>
+
