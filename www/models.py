@@ -10,7 +10,7 @@ SEX_CHOICES = (
 
 class Characters(models.Model):
 	name = models.CharField(max_length=100)
-	description = models.CharField(max_length=100, blank=True, null=True)
+	description = models.CharField(max_length=1000, blank=True, null=True)
 	sex = models.CharField(max_length=2, choices=SEX_CHOICES, default=MAN)
 	taken = models.BooleanField(default=False)
 	picture = models.CharField(max_length=300, blank=True, null=True)
